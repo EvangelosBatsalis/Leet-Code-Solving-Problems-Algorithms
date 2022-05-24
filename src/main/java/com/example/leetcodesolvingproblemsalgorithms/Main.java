@@ -1,6 +1,7 @@
 package com.example.leetcodesolvingproblemsalgorithms;
 
 import com.example.leetcodesolvingproblemsalgorithms.LeetCodeProblemSolution.RomanToInteger;
+import com.example.leetcodesolvingproblemsalgorithms.LeetCodeProblemSolution.SingleArrayNumber;
 
 public class Main {
 
@@ -10,9 +11,12 @@ public class Main {
 //        System.out.println(node1.toString());
 //        node1.toString();
 
-        RomanToInteger roman = new RomanToInteger();
+        //RomanToInteger roman = new RomanToInteger();
 
-        System.out.println(roman.romanToInt("III"));
+        //System.out.println(roman.romanToInt("IIVIVI"));
+        int[] nums = {1,1,2,2,3};
+        SingleArrayNumber singleArrayNumber = new SingleArrayNumber();
+        singleArrayNumber.singleNumber(nums);
 
 
     }

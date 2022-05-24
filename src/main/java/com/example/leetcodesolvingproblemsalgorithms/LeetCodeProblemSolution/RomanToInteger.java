@@ -42,23 +42,50 @@ s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  */
 
+import java.util.Arrays;
+import java.util.Collection;
+
 public class RomanToInteger {
 
-    public int romanToInt(String s){
+    public int romanToInt(String s) {
+        int n = s.length();
+        int nums[] = new int[n];
 
-        String[] splittedString = new String[s.length()];
-        splittedString = s.split("");
-            for (String kati:splittedString
-            ) {
-                System.out.println(kati);
+        for (int i = 0; i < n; i++) {
+            switch (s.charAt(i)) {
+                case 'M':
+                    nums[i] = 1000;
+                    break;
+                case 'D':
+                    nums[i] = 500;
+                    break;
+                case 'C':
+                    nums[i] = 100;
+                    break;
+                case 'L':
+                    nums[i] = 50;
+                    break;
+                case 'X':
+                    nums[i] = 10;
+                    break;
+                case 'V':
+                    nums[i] = 5;
+                    break;
+                case 'I':
+                    nums[i] = 1;
+                    break;
             }
+        }
 
-            for(int i = 1;i<splittedString.length;i++){
+        int sum = 0;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i + 1] > nums[i])
+                sum -= nums[i];
+            else
+                sum += nums[i];
+        }
+        sum += nums[n - 1];
 
-            }
-
-
-        return 1;
+        return sum;
     }
-
 }
